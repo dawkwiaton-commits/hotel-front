@@ -3,12 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { X, Menu } from "lucide-react";
+import { MenuItem } from "../layouts/Header";
 
-interface MenuItem {
-  label: string;
-  href: string;
-  children?: { label: string; href: string }[];
-}
+
 
 export function MobileMenu({ menuItems }: { menuItems: MenuItem[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);

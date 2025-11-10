@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
-interface MenuItem {
-  label: string;
-  href: string;
-  icon: any;
-  children?: { label: string; href: string }[];
-}
+import { MenuItem } from "../layouts/Header";
 
 interface DesktopMenuProps {
   menuItems: MenuItem[];
