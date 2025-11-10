@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <header className="w-full relative z-50">
-      <div className="w-full border-b bg-white">
+      <div className="w-full bg-white">
           
           {/* Desktop */}
           <DesktopMenu menuItems={menuItems} />

@@ -32,7 +32,7 @@ export default function DesktopMenu({ menuItems }: DesktopMenuProps) {
   // };
 
   return (
-    <nav className="hidden md:flex w-full relative bg-white border-b z-50">
+    <nav className="hidden md:flex w-full relative bg-white z-50">
       <div className="w-full max-w-[1600px] mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold">
@@ -86,7 +86,7 @@ export default function DesktopMenu({ menuItems }: DesktopMenuProps) {
                 {/* Mega-menu - zawsze w DOM */}
                 {hasChildren && (
                   <div
-                    className={`absolute top-full left-0 w-screen bg-white border-t border-gray-300 z-40 shadow-lg transition-all ${
+                    className={`absolute py-2 top-full left-0 w-screen bg-white border-t border-gray-300 z-40 shadow-lg transition-all ${
                       isOpen ? "block" : "hidden"
                     }`}
                     onMouseEnter={() => {
@@ -96,7 +96,6 @@ export default function DesktopMenu({ menuItems }: DesktopMenuProps) {
                     onMouseLeave={handleMouseLeave}
                   >
                     <div className="max-w-[1600px] mx-auto px-6">
-                      <div className="border-b border-gray-300"></div>
                       <div className="flex justify-center gap-8 py-4">
                         {item.children?.map((child) => (
                           <Link

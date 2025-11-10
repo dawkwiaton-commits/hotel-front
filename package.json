@@ -12,6 +12,7 @@
     "@fullcalendar/daygrid": "^6.1.19",
     "@fullcalendar/interaction": "^6.1.19",
     "@fullcalendar/react": "^6.1.19",
+    "@hookform/resolvers": "^5.2.2",
     "@types/pg": "^8.15.6",
     "axios": "^1.13.2",
     "framer-motion": "^12.23.24",
@@ -22,8 +23,10 @@
     "react": "19.2.0",
     "react-datepicker": "^8.8.0",
     "react-dom": "19.2.0",
+    "react-google-recaptcha-v3": "^1.11.0",
     "react-hook-form": "^7.66.0",
-    "yet-another-react-lightbox": "^3.25.0"
+    "yet-another-react-lightbox": "^3.25.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.17",

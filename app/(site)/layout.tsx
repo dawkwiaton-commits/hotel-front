@@ -5,6 +5,5 @@ export default function SiteLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Server Component – nie dodajemy <html> ani <body>!
   return <SiteLayoutClientWrapper>{children}</SiteLayoutClientWrapper>;
 }
