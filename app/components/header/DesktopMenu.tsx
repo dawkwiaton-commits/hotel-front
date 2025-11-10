@@ -6,6 +6,7 @@ import { useState } from "react";
 interface MenuItem {
   label: string;
   href: string;
+  icon: any;
   children?: { label: string; href: string }[];
 }
 
@@ -18,16 +19,23 @@ export default function DesktopMenu({ menuItems }: DesktopMenuProps) {
   const [submenuHovered, setSubmenuHovered] = useState(false);
   let timeout: NodeJS.Timeout;
 
+  const handleMouseEnter = (item: any) =>  {
+    timeout = setTimeout(() => {
+      setHovered(item);
+      // setSubmenuHovered(false);
+    }, 150); 
+  }
+
   const handleMouseLeave = () => {
     timeout = setTimeout(() => {
       setHovered(null);
       setSubmenuHovered(false);
-    }, 150); // delay, żeby nie znikało przy szybkim ruchu w dół
+    }, 50); // delay, żeby nie znikało przy szybkim ruchu w dół
   };
 
-  const handleMouseEnter = () => {
-    clearTimeout(timeout);
-  };
+  // const handleMouseEnter = () => {
+  //   clearTimeout(timeout);
+  // };
 
   return (
     <nav className="hidden md:flex w-full relative bg-white border-b z-50">
@@ -46,18 +54,37 @@ export default function DesktopMenu({ menuItems }: DesktopMenuProps) {
             const isOpen = hovered === item.label || submenuHovered;
 
             return (
-              <div
-                key={item.label}
-                className=" flex flex-col"
-                onMouseEnter={() => hasChildren && setHovered(item.label)}
-                onMouseLeave={handleMouseLeave}
-              >
+              <div key={item.label} className=" flex flex-col">
                 <Link
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium hover:text-brown-700 transition"
-                  onMouseEnter={handleMouseEnter}
+                  className="px-3 py-2 flex justify-center items-center relative w-32 h-8 text-sm font-medium"
+                  onMouseEnter={() => handleMouseEnter(item.label)}
+                  onMouseLeave={handleMouseLeave}
+                  // onMouseEnter={() => setHovered(item.label)}
                 >
-                  {item.label}
+                  {/* Kontener, który zawsze zajmuje całą przestrzeń */}
+                  <span className="flex justify-center items-center w-full h-full relative">
+                    {/* Tekst */}
+                    <span
+                      className={`absolute inset-0 flex justify-center items-center transition-opacity duration-300 ${
+                        hovered === item.label
+                          ? "opacity-0 pointer-events-none"
+                          : "opacity-100"
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                    {/* Ikona */}
+                    <span
+                      className={`absolute inset-0 flex justify-center items-center transition-opacity duration-300 ${
+                        hovered === item.label
+                          ? "opacity-100"
+                          : "opacity-0 pointer-events-none"
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+                  </span>
                 </Link>
 
                 {/* Mega-menu - zawsze w DOM */}
