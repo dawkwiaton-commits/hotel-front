@@ -16,15 +16,8 @@ export default function Gallery({ title, images }: GalleryProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    slides: {
-      perView: 1,
-      spacing: 10,
-    },
-    breakpoints: {
-      "(min-width: 768px)": {
-        slides: { perView: 3, spacing: 10 },
-      },
-    },
+    slides: { perView: 1, spacing: 10 },
+    breakpoints: { "(min-width: 768px)": { slides: { perView: 3, spacing: 10 } } },
     slideChanged(s) {
       setCurrentSlide(s.track.details.rel);
     },
@@ -35,23 +28,26 @@ export default function Gallery({ title, images }: GalleryProps) {
 
   return (
     <div className="w-full py-16 px-6 md:px-16 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-brown900 mb-6">
-        {title}
-      </h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-brown900 mb-6">{title}</h2>
 
       <div className="relative">
         {/* Strzałki */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-md rounded-full p-3 cursor-pointer z-10 transition"
         >
-          ◀
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brown900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
+
         <button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-md rounded-full p-3 cursor-pointer z-10 transition"
         >
-          ▶
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brown900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
         </button>
 
         {/* Slider miniaturek */}
@@ -73,16 +69,16 @@ export default function Gallery({ title, images }: GalleryProps) {
       </div>
 
       {/* Kropki */}
-      <div className="flex justify-center gap-2 mt-4">
-        {images.map((_, i) => (
-          <span
-            key={i}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === i ? "bg-brown900" : "bg-gray-300"
-            }`}
-          ></span>
-        ))}
-      </div>
+      <div className="flex justify-center gap-2 mt-10">
+  {images.map((_, i) => (
+    <span
+      key={i}
+      className={`w-3.5 h-3.5 rounded-full border border-gray-300 ${
+        currentSlide === i ? "bg-brown900" : "bg-gray-300"
+      }`}
+    ></span>
+  ))}
+</div>
 
       {/* Lightbox */}
       {index !== null && (

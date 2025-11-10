@@ -15,7 +15,7 @@ export default function DomZBaliPage() {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white text-center px-6">
           <FadeInUp delay={0}>
-            <HeaderSection title="Domy na sprzedaż na Wzgórzach Dylewskich" />
+            <HeaderSection title="Domy na sprzedaż na Wzgórzach Dylewskich" color="white"/>
           </FadeInUp>
           <FadeInUp delay={0.2}>
             <p className="text-lg md:text-2xl">Poczuj przestrzeń</p>
@@ -70,17 +70,17 @@ export default function DomZBaliPage() {
       </section>
 
       <Gallery
-      title="Galeria"
-  images={[
-    "https://wysokawies.pl/wp-content/uploads/2024/04/2s.jpg",
-    "https://wysokawies.pl/wp-content/uploads/2024/04/2s.jpg",
-    "https://wysokawies.pl/wp-content/uploads/2024/04/3s.jpg",
-    "https://wysokawies.pl/wp-content/uploads/2024/04/4s.jpg",
-    "https://wysokawies.pl/wp-content/uploads/2024/04/2s.jpg",
-    "https://wysokawies.pl/wp-content/uploads/2024/04/3s.jpg",
-    "https://wysokawies.pl/wp-content/uploads/2024/04/4s.jpg",
-  ]}
-/>
+        title="Galeria"
+        images={[
+          "https://wysokawies.pl/wp-content/uploads/2024/04/2s.jpg",
+          "https://wysokawies.pl/wp-content/uploads/2024/04/2s.jpg",
+          "https://wysokawies.pl/wp-content/uploads/2024/04/3s.jpg",
+          "https://wysokawies.pl/wp-content/uploads/2024/04/4s.jpg",
+          "https://wysokawies.pl/wp-content/uploads/2024/04/2s.jpg",
+          "https://wysokawies.pl/wp-content/uploads/2024/04/3s.jpg",
+          "https://wysokawies.pl/wp-content/uploads/2024/04/4s.jpg",
+        ]}
+      />
     </div>
   );
 }

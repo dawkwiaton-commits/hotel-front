@@ -27,7 +27,7 @@ export default function HomePage() {
               className="underline hover:text-brown-700 transition"
             >
               Poznaj naszą historię
-            </Link>{" "}
+            </Link>
             i dowiedz się więcej o naszym rustykalnym hotelu w sercu Bieszczad.
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function HomePage() {
         style={{ minHeight: `calc(100vh - ${HEADER_HEIGHT}px)` }}
       >
         <FadeInUp delay={0.2}>
-          <HeaderSection title="Poznaj naszą historię" href="/nasza-historia" />
+          <HeaderSection title="Poznaj naszą historię" href="/nasza-historia" color="black" />
         </FadeInUp>
 
         <div className="max-w-3xl text-lg md:text-xl leading-relaxed text-brown900">
