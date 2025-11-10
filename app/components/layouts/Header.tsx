@@ -11,7 +11,7 @@ const menuItems = [
   { label: "Nasza Historia", href: "/nasza-historia", icon: <Book size={20} /> },
   {
     label: "Galeria",
-    href: "/galeria",
+    href: "/",
     icon: <Image size={20} />,
     children: [
       { label: "Bystre i okolica", href: "/galeria/bystre-i-okolica" },

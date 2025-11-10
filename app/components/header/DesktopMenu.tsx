@@ -19,12 +19,12 @@ export default function DesktopMenu({ menuItems }: DesktopMenuProps) {
   const [submenuHovered, setSubmenuHovered] = useState(false);
   let timeout: NodeJS.Timeout;
 
-  const handleMouseEnter = (item: any) =>  {
+  const handleMouseEnter = (item: any) => {
     timeout = setTimeout(() => {
       setHovered(item);
       // setSubmenuHovered(false);
-    }, 150); 
-  }
+    }, 150);
+  };
 
   const handleMouseLeave = () => {
     timeout = setTimeout(() => {
@@ -57,10 +57,12 @@ export default function DesktopMenu({ menuItems }: DesktopMenuProps) {
               <div key={item.label} className=" flex flex-col">
                 <Link
                   href={item.href}
+                  onClick={(e) => {
+                    if (item.children) e.preventDefault(); // blokuje kliknięcie jeśli są podmenu
+                  }}
                   className="px-3 py-2 flex justify-center items-center relative w-32 h-8 text-sm font-medium"
                   onMouseEnter={() => handleMouseEnter(item.label)}
                   onMouseLeave={handleMouseLeave}
-                  // onMouseEnter={() => setHovered(item.label)}
                 >
                   {/* Kontener, który zawsze zajmuje całą przestrzeń */}
                   <span className="flex justify-center items-center w-full h-full relative">
