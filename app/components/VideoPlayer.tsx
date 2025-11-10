@@ -84,7 +84,7 @@ export default function VideoPlayer({
         playsInline // dla mobile
       />
 
-      {showControls && (
+      {/* {showControls && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-4 bg-black/40 rounded-md p-2">
           <button
             onClick={togglePlay}
@@ -105,7 +105,7 @@ export default function VideoPlayer({
             -
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

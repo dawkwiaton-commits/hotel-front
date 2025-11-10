@@ -22,7 +22,7 @@ const menuItems = [
   },
   { label: "Cennik", href: "/cennik", icon: <Calendar size={20} /> },
   { label: "Rezerwacje", href: "/rezerwacje", icon: <Calendar size={20} /> },
-  { label: "Kontakt", href: "/kontakt", icon: <Mail size={20} /> },
+  // { label: "Kontakt", href: "/kontakt", icon: <Mail size={20} /> },
 ];
 
 export default function Header() {
