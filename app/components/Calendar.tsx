@@ -1,9 +1,9 @@
 // Calendar.tsx
 'use client'
 
-import FullCalendar, { DateClickArg } from '@fullcalendar/react'
+import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
+import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'
 import { useEffect, useState } from 'react'
 import BookingFormModal from './BookingFormModal'
 
