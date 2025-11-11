@@ -63,7 +63,7 @@ export default function ContactForm() {
 
       // Wyślij request do NestJS
       const res = await fetch(
-        "https://hotel-backend-try4.onrender.com/email/reservation",
+        "http://localhost:3001/email/reservation",
         {
           method: "POST",
           headers: {
