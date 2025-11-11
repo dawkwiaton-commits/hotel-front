@@ -8,6 +8,13 @@ export default function ContactCaptchaWrapper({
   return (
     <GoogleReCaptchaProvider
       reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+      scriptProps={{
+        async: true,
+        defer: true,
+        appendTo: "head", // lub "body"
+        
+      }}
+      container={{ parameters: { badge: "inline" }}} 
     >
      {children}
     </GoogleReCaptchaProvider>

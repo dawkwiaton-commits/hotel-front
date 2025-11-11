@@ -63,7 +63,7 @@ export default function ContactForm() {
 
       // Wyślij request do NestJS
       const res = await fetch(
-        "http://localhost:3001/email/reservation",
+        "https://e865410ec537.ngrok-free.app//email/reservation",
         {
           method: "POST",
           headers: {
